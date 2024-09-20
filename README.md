@@ -8,8 +8,9 @@ A Discord bot for annoying your friends.
 3. Install Discordjs, and a linter.
 4. Add a "config.json" to the root directory.
 5. Add a "clientId" and "token" for your bot in the config.json.
-6. Add PNG files to bot/assets/chatbubble/sfw & bot/assets/chatbubble/questionable
-6. You can now run index.js and deploycommands.js.
+6. Add PNG files to bot/assets/chatbubble/sfw & bot/assets/chatbubble/questionable.
+7. Use a program like renamer to bulk rename all of the photos to numbers, starting from 1.
+8. You can now run index.js and deploycommands.js.
 
 
 # ISC License
