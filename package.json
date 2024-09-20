@@ -1,0 +1,17 @@
+{
+  "name": "chatbubble",
+  "version": "1.0.0",
+  "description": "most annoying discord bot",
+  "main": "bot/index.js",
+  "scripts": {
+    "test": "run"
+  },
+  "author": "Nehiyawewin",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.10.0"
+  }
+}
