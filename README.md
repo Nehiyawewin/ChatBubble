@@ -12,7 +12,7 @@ A Discord bot for annoying your friends.
 6. You can now run index.js and deploycommands.js.
 
 
-#ISC License
+# ISC License
 
 Copyright 2024 Nehiyawewin
 
