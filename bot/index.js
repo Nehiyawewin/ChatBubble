@@ -3,8 +3,6 @@ const path = require('node:path');
 const fs = require('node:fs');
 const { token } = require('../config.json');
 
-//https://discord.com/oauth2/authorize?client_id=1286535394199867472&permissions=294272493632&integration_type=0&scope=bot
-
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
