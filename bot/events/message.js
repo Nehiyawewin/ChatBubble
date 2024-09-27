@@ -25,9 +25,9 @@ module.exports = {
 			var randomInt = getRandomInt(0, sfwImages + questionableImages);
 
 			if (randomInt > sfwImages)
-				await message.reply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] });
+				message.reply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] });
 			else
-				await message.reply({ files: [sfwFolder + "/" + randomInt + ".png"] });
+				message.reply({ files: [sfwFolder + "/" + randomInt + ".png"] });
 		
 
 	},
