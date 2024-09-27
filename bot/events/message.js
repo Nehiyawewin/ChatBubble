@@ -10,6 +10,8 @@ module.exports = {
 	once: false,
 	async execute(message) {
 		
+		if (message.author != 261779248535175171)
+			return;
 
 			var sfwImages = 0;
 			var questionableImages = 0;
@@ -23,9 +25,9 @@ module.exports = {
 			var randomInt = getRandomInt(0, sfwImages + questionableImages);
 
 			if (randomInt > sfwImages)
-				message.reply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] });
+				await message.reply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] });
 			else
-				message.reply({ files: [sfwFolder + "/" + randomInt + ".png"] });
+				await message.reply({ files: [sfwFolder + "/" + randomInt + ".png"] });
 		
 
 	},
