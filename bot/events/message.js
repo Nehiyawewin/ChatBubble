@@ -9,9 +9,6 @@ module.exports = {
 	name: Events.MessageCreate,
 	once: false,
 	async execute(message) {
-		
-		if (message.author != 261779248535175171)
-			return;
 
 			var sfwImages = 0;
 			var questionableImages = 0;
