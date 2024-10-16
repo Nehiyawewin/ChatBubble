@@ -14,7 +14,7 @@ module.exports = {
 		const sfwFolder = path.join(assetsPath, "sfw");
 		const questionableFolder = path.join(assetsPath, "questionable");
 
-		if (message.author == 2617792485351751710) {
+		if (message.author == 12345678910) {
 
 			var sfwImages = 0;
 			var questionableImages = 0;

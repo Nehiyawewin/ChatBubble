@@ -1,2 +1,2 @@
-@echo off
+title Chatbubble Bot
 node bot/index.js

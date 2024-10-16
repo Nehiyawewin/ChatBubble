@@ -8,6 +8,7 @@ const commandFolder = path.join(__dirname, 'commands');
 	
 const commandFiles = fs.readdirSync(commandFolder).filter(file => file.endsWith('.js'));
     
+//get commands
 for (const file of commandFiles) {
 
 	const filePath = path.join(commandFolder, file);
@@ -16,12 +17,14 @@ for (const file of commandFiles) {
 	if ('data' in command && 'execute' in command)
 		commands.push(command.data.toJSON());
 	else
-		console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+		console.log('[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.');
 
 }
 
 const rest = new REST().setToken(token);
 
+
+//refresh the commands
 (async () => {
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);

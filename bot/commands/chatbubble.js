@@ -53,11 +53,12 @@ function sendChatBubble(interaction, questionable) {
 		console.log("Random - Sfw Images: " + (randomInt - sfwImages))
 
 	if (questionable) {
-		if (randomInt > sfwImages) {
+
+		if (randomInt > sfwImages)
 			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] }));
-		} else {
+		else
 			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [sfwFolder + "/" + randomInt + ".png"] }));
-		}
+
 	} else {
 		interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [sfwFolder + "/" + getRandomInt(0, sfwImages) + ".png"] }));
 	}
