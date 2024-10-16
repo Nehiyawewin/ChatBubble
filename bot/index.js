@@ -3,14 +3,24 @@ const path = require('node:path');
 const fs = require('node:fs');
 const { token } = require('../config.json');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+//setup intents
+const client = new Client({ 
+	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildMessageReactions,
+	] });
 
+
+//collection for commands and cooldowns
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
 const commandFolder = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandFolder).filter(file => file.endsWith('.js'));
 
+//get commands
 for (const file of commandFiles) {
 
 	const filePath = path.join(commandFolder, file);
@@ -26,6 +36,7 @@ for (const file of commandFiles) {
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
+//execute events
 for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);

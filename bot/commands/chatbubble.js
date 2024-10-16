@@ -24,7 +24,7 @@ module.exports = {
 };
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * ((max) - min) ) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function sendChatBubble(interaction, questionable) {
@@ -54,12 +54,12 @@ function sendChatBubble(interaction, questionable) {
 
 	if (questionable) {
 		if (randomInt > sfwImages) {
-			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().reply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] }));
+			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] }));
 		} else {
-			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().reply({ files: [sfwFolder + "/" + randomInt + ".png"] }));
+			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [sfwFolder + "/" + randomInt + ".png"] }));
 		}
 	} else {
-		interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().reply({ files: [sfwFolder + "/" + getRandomInt(0, sfwImages) + ".png"] }));
+		interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [sfwFolder + "/" + getRandomInt(0, sfwImages) + ".png"] }));
 	}
 
 }
