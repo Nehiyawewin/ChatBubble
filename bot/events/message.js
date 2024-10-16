@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * ((max) - min) ) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
 			for (const file of fs.readdirSync(questionableFolder))
 				questionableImages++
 
-			var randomInt = getRandomInt(0, sfwImages + questionableImages);
+			var randomInt = getRandomInt(1, sfwImages + questionableImages);
 
 			if (randomInt > sfwImages)
 				message.reply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] });
