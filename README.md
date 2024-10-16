@@ -1,18 +1,26 @@
 # Chatbubble
-A Discord bot for annoying your friends.
+A Discord bot for annoying your friends. Should be simple to setup
 
 # Install guide
 
-1. Install Node.js
-2. Fork or clone repository.
-3. Install Discordjs, and a linter.
-4. Add a "config.json" to the root directory.
-5. Add a "clientId" and "token" for your bot in the config.json.
-6. Add PNG files to bot/assets/chatbubble/sfw & bot/assets/chatbubble/questionable
-6. You can now run index.js and deploycommands.js.
+1. Download the repository, and place the files in whatever folder you want
+3. Install Discordjs, and a linter. I used eslint.
+4. Add a "clientId" and "token" for your bot in the config.json.
+6. Add PNG files to bot/assets/chatbubble/sfw & bot/assets/chatbubble/questionable (If you have questionable images).
+7. Use a program like renamer to bulk rename all of the photos to numbers, starting from 1.
+8. You can now run index.js and deploycommands.js.
 
+# In the future
+Todo:
+- NSFW channel permissions so questionable images cannot be sent to non NSFW channels.
+- A command to target a specific friend.
+- Support different file types
+- Get the random images a better way.
 
-#ISC License
+I am not going to take responsability if your bot sends nsfw content, and you are punished for it.
+Additionally, I did not create this bot as a means to cyberbully people. Please chatbubble responsably.
+
+# ISC License
 
 Copyright 2024 Nehiyawewin
 
