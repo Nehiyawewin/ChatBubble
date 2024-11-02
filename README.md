@@ -14,7 +14,7 @@ A Discord bot for annoying your friends. Should be simple to setup
 Todo:
 - NSFW channel permissions so questionable images cannot be sent to non NSFW channels.
 - A command to target a specific friend.
-- Support different file types
+- Support different file types (gif, jpg, etc)
 - Get the random images a better way.
 
 I am not going to take responsability if your bot sends nsfw content, and you are punished for it.

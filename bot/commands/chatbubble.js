@@ -36,11 +36,15 @@ function sendChatBubble(interaction, questionable) {
 	var sfwImages = 0;
 	var questionableImages = 0;
 
-	for (const file of fs.readdirSync(sfwFolder))
-		sfwImages++
+	for (const file of fs.readdirSync(sfwFolder)) {
+		if (file.toLowerCase().indexOf(".png") >= 0)
+			sfwImages++
+	}
 
-	for (const file of fs.readdirSync(questionableFolder))
-		questionableImages++
+	for (const file of fs.readdirSync(questionableFolder)) {
+		if (file.toLowerCase().indexOf(".png") >= 0)
+			questionableImages++
+	}
 
 	var randomInt = getRandomInt(0, sfwImages + questionableImages);
 
@@ -55,12 +59,12 @@ function sendChatBubble(interaction, questionable) {
 	if (questionable) {
 
 		if (randomInt > sfwImages)
-			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] }));
+			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().reply({ files: [questionableFolder + "/" + (randomInt - sfwImages) + ".png"] }));
 		else
-			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [sfwFolder + "/" + randomInt + ".png"] }));
+			interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().reply({ files: [sfwFolder + "/" + randomInt + ".png"] }));
 
 	} else {
-		interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().deferReply({ files: [sfwFolder + "/" + getRandomInt(0, sfwImages) + ".png"] }));
+		interaction.channel.messages.fetch({ limit: 1 }).then((messages) => messages.last().reply({ files: [sfwFolder + "/" + getRandomInt(0, sfwImages) + ".png"] }));
 	}
 
 }
